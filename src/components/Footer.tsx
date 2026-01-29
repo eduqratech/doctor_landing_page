@@ -19,14 +19,15 @@ const Footer = () => {
                 </div>
                 <div className="footer-col">
                     <h4>Contact</h4>
-                    <p>+1 123 456 7890</p>
-                    <p>info@medicare.com</p>
-                    <p>New York, USA</p>
+                    <p>+91 9618344086</p>
+                    <p>sureshpeddinti221@gmail.com</p>
+                    <p>Gallery Milinium Plaza, Hyderabad</p>
+                    <a href="https://www.linkedin.com/in/suresh-peddinti-5b6941232" target="_blank" rel="noopener noreferrer" style={{ marginTop: '1rem', display: 'inline-block', color: '#2dd4bf' }}>Connect on LinkedIn</a>
                 </div>
                 <div className="footer-col">
                     <h4>Find Our Clinic</h4>
                     <div className="mini-map" style={{ background: '#334155', padding: '1rem', borderRadius: '8px', opacity: 0.8 }}>
-                        <small>123 Medical Center Dr</small>
+                        <small>Gallery Milinium Plaza</small>
                     </div>
                 </div>
             </div>

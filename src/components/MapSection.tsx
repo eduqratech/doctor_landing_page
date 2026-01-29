@@ -21,7 +21,7 @@ const MapSection = () => {
                             </div>
                             <div className="item-content">
                                 <h3>Our Address</h3>
-                                <p>Attapur, Inner Ring Rd, Pillar No 145, Hyderabad, Telangana 500048</p>
+                                <p>Gallery milinium plaza upperpally chintalmate road Rangareddy Hyderbad 500048</p>
                             </div>
                         </div>
 

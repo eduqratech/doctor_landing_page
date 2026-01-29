@@ -1,6 +1,11 @@
-
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
 
 const Header = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
     return (
         <header className="header">
             <div className="container header-container">
@@ -8,15 +13,20 @@ const Header = () => {
                     <span className="logo-icon">💚</span>
                     <span className="logo-text">Medi<span className="text-primary">Care</span></span>
                 </div>
-                <nav className="nav">
-                    <a href="#home" className="nav-link active">Home</a>
-                    <a href="#about" className="nav-link">About Us</a>
-                    <a href="#services" className="nav-link">Services</a>
-                    <a href="#doctors" className="nav-link">Doctors</a>
-                    <a href="#blog" className="nav-link">Blog</a>
-                    <a href="#contact" className="nav-link">Contact Us</a>
+                <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
+                    <a href="#home" className="nav-link active" onClick={() => setIsMenuOpen(false)}>Home</a>
+                    <a href="#about" className="nav-link" onClick={() => setIsMenuOpen(false)}>About Us</a>
+                    <a href="#services" className="nav-link" onClick={() => setIsMenuOpen(false)}>Services</a>
+                    <a href="#doctors" className="nav-link" onClick={() => setIsMenuOpen(false)}>Doctors</a>
+                    <a href="#blog" className="nav-link" onClick={() => setIsMenuOpen(false)}>Blog</a>
+                    <a href="#contact" className="nav-link" onClick={() => setIsMenuOpen(false)}>Contact Us</a>
                 </nav>
-                <button className="btn btn-primary">Make an Appointment</button>
+                <div className="header-actions">
+                    <button className="btn btn-primary d-none-mobile">Make an Appointment</button>
+                    <button className="mobile-toggle" onClick={toggleMenu}>
+                        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                    </button>
+                </div>
             </div>
             <style>{`
                 .header {
@@ -47,14 +57,45 @@ const Header = () => {
                 }
                 .nav-link {
                     font-weight: 500;
-                    font-size: 0.95rem;
+                    font-size: 1rem;
                     color: var(--text-color);
                 }
                 .nav-link:hover, .nav-link.active {
                     color: var(--primary-color);
                 }
+                }
+                .header-actions {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                }
+                .mobile-toggle {
+                    display: none;
+                    color: var(--secondary-color);
+                }
                 @media (max-width: 768px) {
-                    .nav { display: none; } /* Mobile menu simplified for now */
+                    .nav {
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        right: 0;
+                        background: white;
+                        flex-direction: column;
+                        padding: 2rem;
+                        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+                        transform: translateY(-150%);
+                        transition: transform 0.3s ease-in-out;
+                        z-index: 999;
+                    }
+                    .nav.nav-open {
+                        transform: translateY(0);
+                    }
+                    .mobile-toggle {
+                        display: block;
+                    }
+                    .d-none-mobile {
+                        display: none;
+                    }
                 }
             `}</style>
         </header>

@@ -116,12 +116,40 @@ const Features = () => {
                     background: #eee;
                     overflow: hidden;
                 }
+                @media (max-width: 1024px) {
+                    .features-container {
+                        gap: 3rem;
+                    }
+                }
                 @media (max-width: 968px) {
                     .features-container {
                         grid-template-columns: 1fr;
                     }
                     .features-list {
                         grid-template-columns: 1fr;
+                    }
+                    .features-image {
+                        order: -1; 
+                        margin-bottom: 2rem;
+                    }
+                    .section-title {
+                        text-align: center !important; /* Override inline style */
+                        font-size: 2rem;
+                    }
+                    .features-text {
+                        text-align: center;
+                    }
+                    .doctor-sig {
+                        justify-content: center;
+                    }
+                    .years-badge {
+                         width: 80px;
+                         height: 80px;
+                         bottom: 15px;
+                         right: 15px;
+                    }
+                    .years-num {
+                        font-size: 1.2rem;
                     }
                 }
             `}</style>

@@ -91,7 +91,7 @@ const Services = () => {
                 }
                 .services-grid {
                     display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
                     gap: 2rem;
                     padding: 0 1rem;
                 }
@@ -132,7 +132,7 @@ const Services = () => {
                     color: #64748b;
                     margin-bottom: 1.5rem;
                     line-height: 1.6;
-                    font-size: 0.95rem;
+                    font-size: 1rem;
                 }
                 .service-link {
                     display: inline-flex;

@@ -26,7 +26,7 @@ const Hero = () => {
                             <span className="icon">📍</span>
                             <div>
                                 <strong>Our Location</strong>
-                                <small>New York, USA</small>
+                                <small>Hyderabad, India</small>
                             </div>
                         </div>
                         <div className="floating-card user-card">
@@ -121,13 +121,43 @@ const Hero = () => {
                     0%, 100% { transform: translateY(0); }
                     50% { transform: translateY(-10px); }
                 }
-                @media (max-width: 968px) {
+                @media (max-width: 1024px) {
+                    .hero-container {
+                        gap: 2rem;
+                    }
+                    .hero-title {
+                        font-size: 2.5rem;
+                    }
+                }
+                @media (max-width: 768px) {
+                    .hero {
+                        padding: 3rem 0;
+                    }
                     .hero-container {
                         grid-template-columns: 1fr;
                         text-align: center;
+                        gap: 3rem;
                     }
-                    .hero-text { margin: 0 auto 2rem; }
-                    .hero-buttons { justify-content: center; }
+                    .hero-text {
+                        margin: 0 auto 2rem;
+                    }
+                    .hero-buttons {
+                        justify-content: center;
+                    }
+                    .hero-title {
+                        font-size: 2rem;
+                    }
+                    .floating-card {
+                        display: none; /* Hide floating cards on mobile to avoid clutter */
+                    }
+                    .location-card, .user-card {
+                        position: static;
+                        display: none;
+                    }
+                    .image-wrapper img {
+                        max-width: 80%;
+                        margin: 0 auto;
+                    }
                 }
             `}</style>
         </section>

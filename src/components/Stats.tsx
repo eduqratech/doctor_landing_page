@@ -89,7 +89,7 @@ const Stats = () => {
                 }
                 .stat-label {
                     color: #666;
-                    font-size: 0.9rem;
+                    font-size: 1rem;
                     font-weight: 500;
                 }
                 @media (max-width: 768px) {
